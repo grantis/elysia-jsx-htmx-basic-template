@@ -1,11 +1,15 @@
 {
   "name": "elysia-jsx-htmx-basic-template",
   "version": "1.0.50",
+  "description": "A modern web application with Elysia, HTMX and Tailwind",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.tsx",
-    "db:generate": "drizzle-kit generate:sqlite --schema=./src/db/schema.ts --out=./drizzle",
-    "db:migrate": "bun run ./src/db/migrate.ts"
+    "dev": "tsx watch src/index.tsx",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "start": "node dist/index.js",
+    "build": "tsc"
   },
   "dependencies": {
     "@elysiajs/html": "^1.2.0",
@@ -18,12 +22,17 @@
     "htmx.org": "^1.9.12",
     "lucide-react": "^0.477.0",
     "preact": "^10.26.4",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7",
     "tailwind-merge": "^3.0.2",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@shadcn/ui": "^0.0.4",
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "@types/node": "^20.8.0",
+    "tsx": "^3.12.10",
+    "typescript": "^5.2.2"
   },
   "module": "src/index.js"
 }
