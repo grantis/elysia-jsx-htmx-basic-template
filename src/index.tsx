@@ -5,8 +5,8 @@ import { html, Html as ElysiaHtml } from '@elysiajs/html'
 // Only needed in Bun/Node environment, not required if only using for types
 (global as any).Html = ElysiaHtml
 
-import { Counter } from './views/components/Counter'
-import { HomePage } from './views/HomePage'
+import { Counter } from './components/Counter'
+import { Home } from './pages/Home'
 
 
 // Define store type for TypeScript
@@ -23,7 +23,7 @@ type AddUserBody = {
 const app = new Elysia()
   .use(html())
   .state<AppState>({ count: 0 }) // Initialize state with count
-  .get('/', () => <HomePage />)
+  .get('/', () => <Home />)
   // HTMX endpoints for counter
   .post('/increment', ({ store }) => {
     store.count += 1
