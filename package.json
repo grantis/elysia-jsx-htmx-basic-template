@@ -3,10 +3,15 @@
   "version": "1.0.50",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.tsx"
+    "dev": "bun run --watch src/index.tsx",
+    "db:generate": "drizzle-kit generate:sqlite --schema=./src/db/schema.ts --out=./drizzle",
+    "db:migrate": "bun run ./src/db/migrate.ts"  
   },
   "dependencies": {
     "@elysiajs/html": "^1.2.0",
+    "@libsql/client": "^0.14.0",
+    "drizzle-kit": "^0.30.5",
+    "drizzle-orm": "^0.40.0",
     "elysia": "latest",
     "htmx.org": "^1.9.12"
   },
