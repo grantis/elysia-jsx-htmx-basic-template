@@ -1,12 +1,14 @@
 {
-  "name": "test-app",
+  "name": "elysia-jsx-htmx-basic-template",
   "version": "1.0.50",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun run --watch src/index.tsx"
   },
   "dependencies": {
-    "elysia": "latest"
+    "@elysiajs/html": "^1.2.0",
+    "elysia": "latest",
+    "htmx.org": "^1.9.12"
   },
   "devDependencies": {
     "bun-types": "latest"
