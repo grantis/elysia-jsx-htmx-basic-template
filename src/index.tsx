@@ -38,10 +38,10 @@ const app = new Elysia()
     // Type assertion for body (or use proper validation)
     const username = (body as AddUserBody).username
     return (
-      <li className="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-md">
+      <li class="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-md">
         <span>{username}</span>
         <button
-          className="btn-danger text-sm py-1"
+          class="btn-danger text-sm py-1"
           hx-delete={`/delete-user/${username}`}
           hx-target="closest li"
           hx-swap="outerHTML"
